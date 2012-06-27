@@ -1,0 +1,50 @@
+slim-server
+===========
+
+slim-server for [slim](http://slim-lang.com/) is like Spork for rspec.
+It provides drb server to compile slim templates quickly.
+
+Why?
+----
+
+Recently I'm createting a PhongeGap app. But I don't want to 
+write HTMLs by hand, so I chose [shadow.vim](https://github.com/ujihisa/shadow.vim/)
+to compile slim template to HTML automagically.
+
+Then I found :save became annoying slow; that's why I wrote
+slim-server.
+
+Install
+=======
+
+    $ gem i slim-server
+
+Usage
+=====
+
+    $ slim-server start &
+    $ slim-server compile < foo.slim > foo.html
+
+If you are using [shadow.vim](https://github.com/ujihisa/shadow.vim/), your foo.html.shd should look like:
+
+    ## slim-server compile
+    // vim: set ft=slim :
+    
+    doctype html
+    html
+      body
+        h1 Hello
+
+License
+=======
+
+MIT
+
+Contact
+=======
+
+[https://github.com/yhara/slim-server](https://github.com/yhara/slim-server)
+
+Yutaka HARA (yhara)
+
+twitter: @yhara_en

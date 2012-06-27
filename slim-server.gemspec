@@ -1,7 +1,7 @@
 Gem::Specification.new do |gem|
   gem.authors       = ["Yutaka HARA"]
   gem.email         = ["yutaka.hara.gmail.com"]
-  gem.description   = %q{slim-server provides drb server to compile slim template engine }
+  gem.description   = %q{slim-server provides drb server to compile slim template engine. It is useful when you are compiling slim locally (say, with shadow.vim.)}
   gem.summary       = %q{compiles slim template engine quickly}
   gem.homepage      = 'http://github.com/yhara/slim-server'
 
