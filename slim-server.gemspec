@@ -3,7 +3,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["yutaka.hara.gmail.com"]
   gem.description   = %q{slim-server provides drb server to compile slim template engine. It is useful when you are compiling slim locally (say, with shadow.vim.)}
   gem.summary       = %q{compiles slim template engine quickly}
-  gem.homepage      = 'http://github.com/yhara/slim-server'
+  gem.homepage      = 'https://github.com/yhara/slim-server'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
