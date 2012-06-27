@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+require 'drb/drb'
+
+drb_uri = "druby://localhost:12333"
+case ARGV.shift
+when "start"
+  require 'slim'
+  module Slim
+    class Server
+      def compile(str)
+        Slim::Template.new(pretty: true){ str }.render #(scope)
+      end
+    end
+  end
+  DRb.start_service(drb_uri, Slim::Server.new)
+  puts "started slim drb server at #{drb_uri}"
+  sleep
+when "compile"
+  src = ARGF.read
+  
+  server = DRbObject.new_with_uri(drb_uri) 
+  print server.compile(src)
+else
+  puts "usage:"
+  puts "  1. slim-server start &"
+  puts "  2. slim-server compile < foo.slim > foo.html"
+  exit
+end
+
